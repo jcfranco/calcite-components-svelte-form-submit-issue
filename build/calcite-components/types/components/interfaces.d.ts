@@ -1,0 +1,9 @@
+export declare type Alignment = "start" | "center" | "end";
+export declare type Appearance = "solid" | "clear" | "outline";
+export declare type FlipContext = "both" | "start" | "end";
+export declare type Layout = "horizontal" | "vertical";
+export declare type Position = "start" | "end";
+export declare type Scale = "s" | "m" | "l";
+export declare type Status = "invalid" | "valid" | "idle";
+export declare type Theme = "light" | "dark";
+export declare type Width = "auto" | "half" | "full";

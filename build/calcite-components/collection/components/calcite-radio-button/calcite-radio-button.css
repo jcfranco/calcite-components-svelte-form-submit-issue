@@ -1,0 +1,145 @@
+/* mixins & extensions */
+
+@keyframes in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes in-down {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes in-up {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
+@keyframes in-scale {
+  0% {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
+
+/**
+* Currently only used in Checkbox.
+*/
+
+:root {
+  --calcite-popper-transition: 150ms ease-in-out;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host-context([theme=dark]) {
+  --calcite-ui-brand: #009AF2;
+  --calcite-ui-brand-hover: #007AC2;
+  --calcite-ui-brand-press: #00619B;
+  --calcite-ui-background: #353535;
+  --calcite-ui-foreground-1: #2b2b2b;
+  --calcite-ui-foreground-2: #202020;
+  --calcite-ui-foreground-3: #151515;
+  --calcite-ui-text-1: #ffffff;
+  --calcite-ui-text-2: #bfbfbf;
+  --calcite-ui-text-3: #9f9f9f;
+  --calcite-ui-text-inverse: #151515;
+  --calcite-ui-text-link: #00A0FF;
+  --calcite-ui-border-1: #4a4a4a;
+  --calcite-ui-border-2: #404040;
+  --calcite-ui-border-3: #353535;
+  --calcite-ui-border-input: #757575;
+  --calcite-ui-info: #00A0FF;
+  --calcite-ui-success: #36DA43;
+  --calcite-ui-warning: #FFC900;
+  --calcite-ui-danger: #FE583E;
+  --calcite-ui-danger-hover: #FF0015;
+  --calcite-ui-danger-press: #D90012;
+}
+
+:host {
+  cursor: pointer;
+  display: inline-block;
+}
+
+:host([labeled]) {
+  --calcite-label-margin-bottom: 0;
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+:host([disabled]) {
+  cursor: default;
+}
+
+:host([disabled]) > ::slotted(calcite-label) {
+  cursor: default;
+}
+
+:host([scale=s][labeled]) {
+  line-height: 1.33;
+  margin-bottom: 8px;
+  margin-right: 12px;
+}
+
+@supports not (display: grid) {
+  :host([scale=s][labeled]) calcite-radio {
+    margin-right: 8px;
+  }
+}
+
+:host([scale=m][labeled]) {
+  line-height: 1.15;
+  margin-bottom: 8px;
+  margin-right: 16px;
+}
+
+@supports not (display: grid) {
+  :host([scale=m][labeled]) calcite-radio {
+    margin-right: 8px;
+  }
+}
+
+:host([scale=l][labeled]) {
+  gap: 12px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+@supports not (display: grid) {
+  :host([scale=l][labeled]) calcite-radio {
+    margin-right: 12px;
+  }
+}
+
+:host([hidden]) {
+  display: none;
+}
