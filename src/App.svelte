@@ -1,5 +1,6 @@
 <script>
   const onSubmitHandler = (evt) => {
+    evt.preventDefault();
     console.log("SUBMIT!");
     alert("SUBMIT!");
   };
@@ -10,7 +11,7 @@ JavaScript (show an alert).
 <br /><br /><br />
 
 <form
-  on:submit|preventDefault={onSubmitHandler}
+  on:submit={onSubmitHandler}
   style="border: 1px solid gray; padding: 10px;"
 >
   <calcite-label status="idle" scale="m">
@@ -23,7 +24,7 @@ JavaScript (show an alert).
     />
   </calcite-label>
 
-  this calcite submit submits the form traditionally instead of calling our
+  This calcite submit submits the form traditionally instead of calling our
   onSubmitHandler created using Svelte:
   <calcite-button
     appearance="solid"
